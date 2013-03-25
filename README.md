@@ -16,7 +16,7 @@ console.dir(wgs84);
 
 ```
 { latitude: 64.14180278865086, longitude: -21.92704599837957 }
-``
+```
 
 # Methods
 
