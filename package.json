@@ -1,7 +1,7 @@
 {
     "name": "isn2wgs",
     "version": "0.0.1",
-    "description": "Convert isnet93 coordinates to wgs84, aka. icelandic coordinates to what everyone else uses.",
+    "description": "Converts ISNET93 coordinates to WGS84, which everyone in the world uses, except for Iceland.",
     "author": "Guðmundur Bjarni Ólafsson <gudmundur.bjarni@gmail.com>",
     "license": "MIT",
 
