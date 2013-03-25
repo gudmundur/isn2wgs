@@ -1,5 +1,7 @@
 # isn2wgs
 
+[![Build Status](https://travis-ci.org/gudmundur/isn2wgs.png)](https://travis-ci.org/gudmundur/isn2wgs)
+
 Converts ISNET93 coordinates to WGS84, which everyone in the world uses, except for Iceland.
 
 This code is adapted from this [gist](https://gist.github.com/avar/585850) made by [Ævar Arnfjörð](http://github.com/avar) and is published with his permission.
