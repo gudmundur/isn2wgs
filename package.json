@@ -1,0 +1,25 @@
+{
+    "name": "isn2wgs",
+    "version": "0.0.1",
+    "description": "Convert isnet93 coordinates to wgs84, aka. icelandic coordinates to what everyone else uses.",
+    "author": "Guðmundur Bjarni Ólafsson <gudmundur.bjarni@gmail.com>",
+    "license": "MIT",
+
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gudmundur/isn2wgs.git"
+    },
+
+    "engines": {
+        "node": "0.8 || 0.10"
+    },
+
+    "scripts": {
+        "test": "mocha test"
+    },
+
+    "devDependencies": {
+        "mocha": "~1.8.2",
+        "chai": "~1.5.0"
+    }
+}
