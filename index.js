@@ -10,19 +10,19 @@ var lonc = 19.00;
 
 var eps = 0.00000000001;
 
-fx = function(p) {
+var fx = function(p) {
     return a * Math.cos(p/rho)/Math.sqrt(1 - Math.pow(e * Math.sin(p/rho), 2));
 }
 
-f1 = function(p) {
+var f1 = function(p) {
     return Math.log((1 - p)/(1 + p));
 }
 
-f2 = function(p) {
+var f2 = function(p) {
     return f1(p) - e * f1(e * p);
 }
 
-f3 = function(p) {
+var f3 = function(p) {
     return pol1*Math.exp((f2(Math.sin(p/rho)) - f2sin1)*sint/2);
 }
 
