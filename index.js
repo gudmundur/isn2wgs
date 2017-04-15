@@ -38,8 +38,7 @@ var polc = f3(latc) + 500000.0;
 
 var peq = a * Math.cos(latc/rho)/(sint*Math.exp(sint*Math.log((45-latc/2)/rho)));
 
-
-module.exports = function(x, y) {
+function isn2wgs(x,y){
     var pol = Math.sqrt(Math.pow(x-500000, 2) + Math.pow(polc-y, 2));
 
     var lat = 90 - 2 * rho * Math.atan(Math.exp(Math.log(pol / peq) / sint));
@@ -56,5 +55,30 @@ module.exports = function(x, y) {
     var lon = -(lonc + rho * Math.atan((500000 - x) / (polc - y)) / sint);
 
     return { latitude: lat, longitude: lon };
+}
+
+//Note to self: Not as accurate as the other operation. Needs better mathematical approach
+function wgs2isn(x,y){
+    l = parseFloat(x);
+    m = parseFloat(y);
+    var k=l*0.0174532925199433;
+    var p=0.0818191913305*Math.sin(k);
+    var o=11616778.382033*Math.pow(Math.tan(0.785398163397448-(k/2))/Math.pow((1-p)/(1+p),0.04090959566525),0.90633380084752);
+    var q=(m+19)*0.0158185089469038;
+    return {
+        x:Math.round((500000+o*Math.sin(q))*1000)/1000,
+        y:Math.round((3482044.27322585-o*Math.cos(q))*1000)/1000
+    };
+}
+
+module.exports = function(x, y) {
+    //Bad solution, we could be looking for isnet93 value that is lower than 180
+    //and therfore the functionality would be completely broken. Luckily that point
+    //is somewhere out in the ocean 
+    if(x > 180){ 
+        return isn2wgs(x,y);
+    }else{
+        return wgs2isn(x,y);
+    }
 }
 
